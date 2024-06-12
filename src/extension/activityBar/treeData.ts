@@ -12,6 +12,11 @@ export interface ITreeData {
     getTreeItem(): Promise<TreeItem>;
     getChildren?(): Promise<ITreeData[] | undefined>;
 }
+
+export function getConnections(): ClusterNode[] {
+    return getCachedConnections().map((item) => new ClusterNode(item));
+} 
+
 export class ClusterNode implements ITreeData {
     public readonly type: NodeType = 'cluster';
     public get schema(): DeepReadonly<EngineSchema> {

@@ -52,7 +52,19 @@
     ],
     "main": "./out/extension/index.js",
     "browser": "./out/extension/browser.js",
+    "enabledApiProposals": [
+        "chatVariableResolver"
+    ],
     "contributes": {
+        "chatParticipants": [
+            {
+                "id": "vscode-kusto.kusto",
+                "fullName": "Kusto",
+                "name": "kusto",
+                "description": "Get answers about Kusto queries with your kusto connections",
+                "isSticky": true
+            }
+        ],
         "configuration": {
             "type": "object",
             "properties": {
@@ -363,7 +375,7 @@
         "concurrently": "^5.2.0",
         "copy-webpack-plugin": "^11.0.0",
         "css-loader": "^6.7.1",
-        "eslint": "^8.35.0",
+        "eslint": "^8.57.0",
         "eslint-config-prettier": "^8.6.0",
         "eslint-plugin-prettier": "^4.2.1",
         "fork-ts-checker-webpack-plugin": "^7.2.13",
@@ -373,7 +385,7 @@
         "less": "^3.11.3",
         "mocha": "^10.2.0",
         "npm": "^9.6.0",
-        "prettier": "^2.8.4",
+        "prettier": "^2.8.8",
         "style-loader": "^3.3.1",
         "svg-inline-loader": "^0.8.2",
         "thread-loader": "^3.0.4",

@@ -20,6 +20,7 @@ import { registerConnection } from './kusto/connections/baseConnection';
 import { AppInsightsConnection } from './kusto/connections/appInsights';
 import { CellCodeLensProvider } from './interactive/cells';
 import { KqlContentProvider } from './content/kqlProvider';
+import { registerChatParticipant } from './chat/chatParticipant';
 
 let client: LanguageClient;
 
@@ -48,6 +49,7 @@ export async function activate(context: ExtensionContext) {
     registerInteractiveExperience();
     registerExportCommand();
     CellCodeLensProvider.register();
+    registerChatParticipant();
 }
 
 export async function deactivate(): Promise<void> {
